@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero";
+import { LaptopShowcase } from "@/components/home/LaptopShowcase";
 import { Products } from "@/components/home/Products";
 import { Philosophy } from "@/components/home/Philosophy";
 import { TechStack } from "@/components/home/TechStack";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-0 pb-24">
       <Hero />
+      <LaptopShowcase />
       <Products />
       <Philosophy />
       <TechStack />
