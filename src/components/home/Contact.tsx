@@ -56,7 +56,7 @@ export function Contact() {
 
                             <button
                                 type="submit"
-                                className="group mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-foreground py-3 text-sm font-medium text-background transition-all hover:bg-foreground/90"
+                                className="btn-premium group mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-foreground py-3 text-sm font-medium text-background hover:bg-foreground/90"
                             >
                                 Send Message
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

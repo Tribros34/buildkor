@@ -45,7 +45,7 @@ export function Products() {
                     {PRODUCTS.map((product) => (
                         <div
                             key={product.name}
-                            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-all hover:border-white/10 hover:bg-white/[0.04] md:p-12"
+                            className="card-premium group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12"
                         >
                             <div className="mb-8">
                                 <div className="mb-6 flex items-center justify-between">
