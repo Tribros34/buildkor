@@ -5,6 +5,11 @@ const TECHNOLOGIES = [
     "DevOps Automation",
     "High-Performance APIs",
     "Distributed Systems",
+    "Unity",
+    "C#",
+    "Dart/Flutter",
+    "Proxmox",
+    "Docker",
 ];
 
 export function TechStack() {

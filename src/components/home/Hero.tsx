@@ -42,7 +42,7 @@ export function Hero() {
                 </h1>
 
                 <p className="animate-fade-in-up max-w-2xl text-xl text-muted delay-100 sm:text-2xl md:text-3xl font-light leading-relaxed">
-                    We build digital products used by millions. <br className="hidden sm:block" />
+                    Build the <span className="text-accent">core</span> with BuildKor. <br className="hidden sm:block" />
                     Software products, automation systems, and scalable platforms.
                 </p>
 

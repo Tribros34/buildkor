@@ -5,28 +5,33 @@ interface Product {
     name: string;
     description: string;
     href: string;
+    video?: string;
 }
 
 const PRODUCTS: Product[] = [
     {
-        name: "Nexus",
-        description: "Enterprise-grade real-time data synchronization engine.",
+        name: "Web Development",
+        description: "Premium Web Experiences. Bespoke, high-performance websites and digital platforms crafted with engineering excellence and modern design principles.",
         href: "#",
+        video: "/videos/meshy_ai_video.mp4",
     },
     {
-        name: "Vantage",
-        description: "Predictive analytics dashboard for high-volume logistics.",
+        name: "Game Development",
+        description: "Immersive Simulations & Gaming. High-fidelity interactive experiences and simulations powered by Unity, pushing the boundaries of visual storytelling.",
         href: "#",
+        video: "/videos/meshy_ai_video_2.mp4",
     },
     {
-        name: "Pulse",
-        description: "Automated infrastructure monitoring and healing system.",
+        name: "Workflow Automation",
+        description: "Intelligent Automation Systems. Leveraging n8n to orchestrate complex business workflows, eliminating manual bottlenecks and accelerating operational efficiency.",
         href: "#",
+        video: "/videos/meshy_ai_video_3.mp4",
     },
     {
-        name: "Flow",
-        description: "Developer-first workflow automation platform.",
+        name: "Mobile App Development",
+        description: "Cross-Platform Mobile Engineering. We build native-quality iOS and Android applications using modern frameworks, ensuring seamless performance across all devices.",
         href: "#",
+        video: "/videos/meshy_ai_video_4.mp4",
     },
 ];
 
@@ -45,7 +50,7 @@ export function Products() {
                     {PRODUCTS.map((product) => (
                         <div
                             key={product.name}
-                            className="card-premium group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12"
+                            className="card-premium group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-white/[0.04] hover:shadow-2xl hover:shadow-accent/10"
                         >
                             <div className="mb-8">
                                 <div className="mb-6 flex items-center justify-between">
@@ -59,20 +64,22 @@ export function Products() {
                                 </p>
                             </div>
 
-                            {/* Mockup Placeholder */}
-                            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/5">
-                                <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/20">
-                                    Product Interface
-                                </div>
-                            </div>
-
-                            <div className="mt-8">
-                                <Link
-                                    href={product.href}
-                                    className="text-sm font-medium text-white/60 transition-colors hover:text-white"
-                                >
-                                    Learn more
-                                </Link>
+                            {/* visual placeholder/media */}
+                            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/5 group-hover:scale-105 transition-transform duration-500">
+                                {product.video ? (
+                                    <video
+                                        src={product.video}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="absolute inset-0 h-full w-full object-cover"
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/20">
+                                        Product Interface
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
