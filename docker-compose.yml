@@ -11,3 +11,13 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
+
+  tunnel:
+    container_name: cloudflared-tunnel
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - app

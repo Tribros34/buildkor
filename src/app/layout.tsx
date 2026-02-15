@@ -19,21 +19,27 @@ export const metadata: Metadata = {
   description: "We build meaningful digital products with care and engineering excellence.",
 };
 
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} antialiased bg-background text-foreground font-sans selection:bg-accent selection:text-white`}
+        className={`${inter.variable} ${plusJakartaSans.variable} antialiased selection:bg-accent/20 selection:text-accent`}
       >
-        <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <LanguageProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <WhatsAppButton />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

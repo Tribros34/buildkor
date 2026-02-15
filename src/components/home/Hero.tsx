@@ -3,8 +3,10 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
+    const { t } = useLanguage();
     const heroRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
@@ -37,28 +39,27 @@ export function Hero() {
             />
 
             <div className="relative z-10 flex max-w-4xl flex-col items-center gap-8">
-                <h1 className="animate-fade-in font-heading text-6xl font-semibold tracking-tighter text-foreground sm:text-7xl md:text-8xl lg:text-9xl">
-                    BuildKor
+                <h1 className="animate-fade-in font-heading text-5xl font-bold tracking-tight text-foreground sm:text-7xl md:text-8xl">
+                    {t.hero.title_start} <span className="text-accent">{t.hero.title_core}</span> {t.hero.title_end}
                 </h1>
 
-                <p className="animate-fade-in-up max-w-2xl text-xl text-muted delay-100 sm:text-2xl md:text-3xl font-light leading-relaxed">
-                    Build the <span className="text-accent">core</span> with BuildKor. <br className="hidden sm:block" />
-                    Software products, automation systems, and scalable platforms.
+                <p className="animate-fade-in max-w-2xl text-xl text-muted delay-100 sm:text-2xl md:text-3xl font-light leading-relaxed">
+                    {t.hero.subtitle}
                 </p>
 
-                <div className="animate-fade-in-up mt-8 flex flex-col gap-4 delay-200 sm:flex-row">
+                <div className="animate-fade-in mt-2 flex flex-col gap-4 delay-200 sm:flex-row">
                     <Link
                         href="#products"
-                        className="btn-premium group flex h-12 items-center justify-center gap-2 rounded-full bg-foreground px-8 text-sm font-medium text-background hover:bg-foreground/90 disabled:opacity-50 disabled:pointer-events-none ring-offset-background"
+                        className="group inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-all hover:bg-foreground/90 hover:scale-105"
                     >
-                        Explore Products
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        {t.hero.cta_products}
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                     <Link
                         href="#contact"
-                        className="btn-premium flex h-12 items-center justify-center rounded-full border border-border bg-transparent px-8 text-sm font-medium text-foreground hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] px-8 text-sm font-medium text-foreground transition-all hover:bg-white/[0.05] hover:scale-105"
                     >
-                        Contact
+                        {t.hero.cta_contact}
                     </Link>
                 </div>
             </div>

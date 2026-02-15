@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import { useLanguage } from "@/context/LanguageContext";
+
 // --- Hooks ---
 
 interface UseInViewOptions {
@@ -117,6 +119,7 @@ function useReducedMotion() {
 // --- Component ---
 
 export function LaptopShowcase() {
+    const { t } = useLanguage();
     const { ref: sectionRef, isInView } = useInView({ threshold: 0.2 });
     const { ref: tiltRef, rotation, isActive } = useTilt();
     const prefersReducedMotion = useReducedMotion();
@@ -151,22 +154,21 @@ export function LaptopShowcase() {
                         isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                     )}>
                         <div className="space-y-6">
-                            <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-                                BuildKor products, <br />
-                                crafted with care.
+                            <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl lg:text-5xl whitespace-pre-line">
+                                {t.laptopShowcase.title}
                             </h2>
                             <p className="max-w-md text-lg leading-relaxed text-muted">
-                                We build durable software products—clean architecture, thoughtful UX, and long-term iteration.
+                                {t.laptopShowcase.description}
                             </p>
                         </div>
 
                         <div className="flex flex-col gap-4 sm:flex-row">
                             <button className="btn-premium group flex h-12 items-center justify-center gap-2 rounded-full bg-foreground px-8 text-sm font-medium text-background hover:bg-foreground/90 transition-all">
-                                Explore products
+                                {t.laptopShowcase.cta_explore}
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </button>
                             <button className="btn-premium flex h-12 items-center justify-center rounded-full border border-white/10 bg-transparent px-8 text-sm font-medium text-foreground hover:bg-white/5 transition-all">
-                                See how we build
+                                {t.laptopShowcase.cta_how}
                             </button>
                         </div>
                     </div>
@@ -197,7 +199,7 @@ export function LaptopShowcase() {
                                         <div className="flex h-10 items-center justify-between border-b border-white/5 bg-white/[0.02] px-4">
                                             <div className="flex items-center gap-2">
                                                 <div className="h-2 w-2 rounded-full bg-accent/80"></div>
-                                                <span className="text-[10px] font-medium tracking-wide text-muted/80 uppercase">Nexus Dashboard</span>
+                                                <span className="text-[10px] font-medium tracking-wide text-muted/80 uppercase">{t.laptopShowcase.nexus_dashboard}</span>
                                             </div>
                                             <div className="flex gap-3">
                                                 <div className="h-1.5 w-12 rounded-full bg-white/10"></div>
@@ -219,8 +221,9 @@ export function LaptopShowcase() {
                                             <div className="col-span-2 flex flex-col gap-4">
                                                 <div className="flex items-center justify-between">
                                                     <div className="h-6 w-32 rounded-md bg-white/5"></div>
-                                                    <span className="rounded-full border border-accent/20 bg-accent/5 px-2 py-0.5 text-[9px] font-medium text-accent">Status: Beta</span>
+                                                    <span className="rounded-full border border-accent/20 bg-accent/5 px-2 py-0.5 text-[9px] font-medium text-accent">{t.laptopShowcase.status_beta}</span>
                                                 </div>
+
 
                                                 {/* Mock Chart Bars */}
                                                 <div className="flex-1 rounded-lg border border-white/5 bg-white/[0.02] p-4 flex items-end justify-between gap-2">

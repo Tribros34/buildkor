@@ -1,10 +1,14 @@
-const TECHNOLOGIES = [
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+
+const TECH_STACK = [
     "Next.js",
-    "React Native",
-    "Cloud Infrastructure",
-    "DevOps Automation",
-    "High-Performance APIs",
-    "Distributed Systems",
+    "React",
+    "Tailwind CSS",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
     "Unity",
     "C#",
     "Dart/Flutter",
@@ -13,14 +17,19 @@ const TECHNOLOGIES = [
 ];
 
 export function TechStack() {
+    const { t } = useLanguage();
+
     return (
-        <section className="py-24 border-b border-white/5">
+        <section className="border-t border-white/5 bg-background py-16">
             <div className="container mx-auto px-6 md:px-12">
-                <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center md:gap-x-12">
-                    {TECHNOLOGIES.map((tech) => (
+                <p className="mb-8 text-center text-sm font-medium uppercase tracking-widest text-muted">
+                    {t.techStack.title}
+                </p>
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 md:gap-x-12">
+                    {TECH_STACK.map((tech) => (
                         <span
                             key={tech}
-                            className="text-lg font-medium text-muted transition-colors hover:text-foreground md:text-xl"
+                            className="text-lg font-medium text-muted transition-colors hover:text-foreground"
                         >
                             {tech}
                         </span>
