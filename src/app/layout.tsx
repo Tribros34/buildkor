@@ -17,6 +17,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "BuildKor | Digital Product Studio",
   description: "We build meaningful digital products with care and engineering excellence.",
+  verification: {
+    google: "5UKvZE7IYU4o-wuS32-jLVIgKu6UWJlmCTlDc_-sSPI",
+  },
   icons: {
     icon: "/favicon.ico",
   },
