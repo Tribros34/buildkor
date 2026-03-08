@@ -21,6 +21,7 @@ export function Philosophy() {
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
                                 className="h-full w-full object-cover opacity-80"
                             >
                                 <source src="/videos/Meshy_AI_video-5.mp4" type="video/mp4" />

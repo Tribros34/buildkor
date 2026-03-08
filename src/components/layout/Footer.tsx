@@ -9,7 +9,7 @@ export function Footer() {
         <footer className="border-t border-white/5 bg-background py-12">
             <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row md:px-12">
                 <p className="text-sm text-muted">
-                    &copy; {new Date().getFullYear()} BuildKor. {t.footer.rights}
+                    &copy; {new Date().getFullYear()} <span className="font-heading font-semibold"><span className="text-red-500">&lt;</span><span className="text-white">Build</span><span className="text-white">K</span><span className="text-white">or</span><span className="text-red-500">/&gt;</span></span>. {t.footer.rights}
                 </p>
                 <div className="flex gap-6">
                     {/* Social links could go here */}
