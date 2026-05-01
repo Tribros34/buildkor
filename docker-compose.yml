@@ -16,7 +16,6 @@ services:
     container_name: cloudflared-tunnel-v2
     image: cloudflare/cloudflared:latest
     restart: always
-    network_mode: service:app
     command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     depends_on:
       - app
