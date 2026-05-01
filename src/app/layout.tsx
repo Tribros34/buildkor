@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 };
 
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { PhoneButton } from "@/components/PhoneButton";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
@@ -44,8 +45,10 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
             <WhatsAppButton />
+            <PhoneButton />
           </div>
         </LanguageProvider>
+
       </body>
     </html>
   );

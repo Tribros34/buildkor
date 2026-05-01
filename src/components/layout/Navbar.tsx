@@ -19,7 +19,25 @@ export function Navbar() {
 
             <div className="flex items-center gap-6">
                 <Link
-                    href="#contact"
+                    href="/calismalar"
+                    className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+                >
+                    {t.nav.works}
+                </Link>
+                <Link
+                    href="/surec"
+                    className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+                >
+                    {t.nav.process}
+                </Link>
+                <Link
+                    href="/hakkimizda"
+                    className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+                >
+                    {t.nav.who_we_are}
+                </Link>
+                <Link
+                    href="/#contact"
                     className="text-sm font-medium text-muted transition-colors hover:text-foreground"
                 >
                     {t.nav.contact}

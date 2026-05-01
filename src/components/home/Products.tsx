@@ -10,10 +10,10 @@ interface ProductData {
 }
 
 const PRODUCT_DATA: ProductData[] = [
-    { href: "#", video: "/videos/meshy_ai_video.mp4" },
-    { href: "#", video: "/videos/meshy_ai_video_2.mp4" },
-    { href: "#", video: "/videos/meshy_ai_video_3.mp4" },
-    { href: "#", video: "/videos/meshy_ai_video_4.mp4" },
+    { href: "/calismalar/web-gelistirme", video: "/videos/meshy_ai_video.mp4" },
+    { href: "/calismalar/oyun-gelistirme", video: "/videos/meshy_ai_video_2.mp4" },
+    { href: "/calismalar/is-akisi-otomasyonu", video: "/videos/meshy_ai_video_3.mp4" },
+    { href: "/calismalar/mobil-uygulama", video: "/videos/meshy_ai_video_4.mp4" },
 ];
 
 export function Products() {
@@ -33,41 +33,42 @@ export function Products() {
                     {t.products.items.map((product, index) => {
                         const data = PRODUCT_DATA[index];
                         return (
-                            <div
-                                key={index}
-                                className="card-premium group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-white/[0.04] hover:shadow-2xl hover:shadow-accent/10"
-                            >
-                                <div className="mb-8">
-                                    <div className="mb-6 flex items-center justify-between">
-                                        <h3 className="font-heading text-2xl font-medium text-foreground md:text-3xl">
-                                            {product.name}
-                                        </h3>
-                                        <ArrowUpRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100 text-muted" />
-                                    </div>
-                                    <p className="max-w-md text-lg leading-relaxed text-muted">
-                                        {product.description}
-                                    </p>
-                                </div>
-
-                                {/* visual placeholder/media */}
-                                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/5 group-hover:scale-105 transition-transform duration-500">
-                                    {data?.video ? (
-                                        <video
-                                            src={data.video}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            preload="auto"
-                                            className="absolute inset-0 h-full w-full object-cover"
-                                        />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/20">
-                                            {t.products.interface_placeholder}
+                            <Link href={data.href} key={index} className="block outline-none">
+                                <div
+                                    className="card-premium group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-white/[0.04] hover:shadow-2xl hover:shadow-accent/10"
+                                >
+                                    <div className="mb-8">
+                                        <div className="mb-6 flex items-center justify-between">
+                                            <h3 className="font-heading text-2xl font-medium text-foreground md:text-3xl">
+                                                {product.name}
+                                            </h3>
+                                            <ArrowUpRight className="h-5 w-5 opacity-0 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100 text-muted" />
                                         </div>
-                                    )}
+                                        <p className="max-w-md text-lg leading-relaxed text-muted">
+                                            {product.description}
+                                        </p>
+                                    </div>
+
+                                    {/* visual placeholder/media */}
+                                    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/5 group-hover:scale-105 transition-transform duration-500">
+                                        {data?.video ? (
+                                            <video
+                                                src={data.video}
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                preload="auto"
+                                                className="absolute inset-0 h-full w-full object-cover"
+                                            />
+                                        ) : (
+                                            <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/20">
+                                                {t.products.interface_placeholder}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
