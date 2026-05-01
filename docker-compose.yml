@@ -16,8 +16,7 @@ services:
     container_name: cloudflared-tunnel-v2
     image: cloudflare/cloudflared:latest
     restart: always
-    # Cloudflare tünelinin 'app' servisine ulaşabilmesi için 
-    # komutu dashboard ayarlarını ezecek şekilde veya yönlendirerek çalıştırıyoruz.
+    network_mode: service:app
     command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     depends_on:
       - app
