@@ -1,13 +1,40 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { cn } from "@/lib/utils";
 import { Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
     const { t } = useLanguage();
 
+    const footerLinks = [
+        { href: "/id", label: t.nav.product, highlight: true },
+        { href: "/calismalar", label: t.nav.works },
+        { href: "/surec", label: t.nav.process },
+        { href: "/hakkimizda", label: t.nav.who_we_are },
+        { href: "/#contact", label: t.nav.contact },
+    ];
+
     return (
         <footer className="border-t border-white/5 bg-background py-12">
+            <div className="container mx-auto mb-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 md:px-12">
+                {footerLinks.map((link) => (
+                    <Link
+                        key={link.href}
+                        href={link.href}
+                        className={cn(
+                            "text-sm font-medium transition-colors",
+                            link.highlight
+                                ? "text-accent hover:text-accent/80"
+                                : "text-muted hover:text-foreground"
+                        )}
+                    >
+                        {link.label}
+                    </Link>
+                ))}
+            </div>
+
             <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row md:px-12">
                 <p className="text-sm text-muted">
                     &copy; {new Date().getFullYear()} <span className="font-heading font-semibold"><span className="text-red-500">&lt;</span><span className="text-white">Build</span><span className="text-white">K</span><span className="text-white">or</span><span className="text-red-500">/&gt;</span></span>. {t.footer.rights}

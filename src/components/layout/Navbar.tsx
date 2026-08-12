@@ -11,6 +11,7 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
+        { href: "/id", label: t.nav.product, highlight: true },
         { href: "/calismalar", label: t.nav.works },
         { href: "/surec", label: t.nav.process },
         { href: "/hakkimizda", label: t.nav.who_we_are },
@@ -51,7 +52,12 @@ export function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+                                className={cn(
+                                    "text-sm font-medium transition-colors",
+                                    link.highlight
+                                        ? "text-accent hover:text-accent/80"
+                                        : "text-muted hover:text-foreground"
+                                )}
                             >
                                 {link.label}
                             </Link>
@@ -83,7 +89,8 @@ export function Navbar() {
                             href={link.href}
                             onClick={() => setIsOpen(false)}
                             className={cn(
-                                "text-2xl font-heading font-semibold text-foreground transition-all duration-300 delay-[var(--delay)]",
+                                "text-2xl font-heading font-semibold transition-all duration-300 delay-[var(--delay)]",
+                                link.highlight ? "text-accent" : "text-foreground",
                                 isOpen ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
                             )}
                             style={{ "--delay": `${index * 50}ms` } as any}

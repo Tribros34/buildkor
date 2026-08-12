@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface ProductData {
@@ -28,6 +28,39 @@ export function Products() {
                     </h2>
                     <div className="mt-6 h-px w-full max-w-[100px] bg-accent" />
                 </div>
+
+                {/* Öne çıkan kendi ürünümüz: BuildKor ID */}
+                <Link href="/id" className="mb-8 block outline-none lg:mb-12">
+                    <div className="group relative grid overflow-hidden rounded-2xl border border-accent/30 bg-accent/[0.04] transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-2xl hover:shadow-accent/10 md:grid-cols-2">
+                        <div className="flex flex-col justify-center p-8 md:p-12">
+                            <span className="inline-flex w-fit items-center rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium tracking-wide text-accent">
+                                {t.id.home.badge}
+                            </span>
+                            <h3 className="mt-6 font-heading text-3xl font-semibold text-foreground md:text-4xl">
+                                {t.id.home.title}
+                            </h3>
+                            <p className="mt-4 max-w-md text-lg leading-relaxed text-muted">
+                                {t.id.home.desc}
+                            </p>
+                            <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors group-hover:text-foreground">
+                                {t.id.home.cta}
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            </span>
+                        </div>
+                        <div className="relative min-h-[220px] overflow-hidden border-t border-accent/20 md:border-l md:border-t-0">
+                            <video
+                                src="/videos/id-hero.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                preload="auto"
+                                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+                        </div>
+                    </div>
+                </Link>
 
                 <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
                     {t.products.items.map((product, index) => {
