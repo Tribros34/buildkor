@@ -19,6 +19,7 @@ export function Navbar() {
     ];
 
     return (
+        <>
         <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md transition-all">
             <div className="container mx-auto flex h-16 items-center justify-between px-6 md:px-12">
                 <Link href="/" className="text-lg font-heading font-semibold tracking-tight transition-opacity hover:opacity-80">
@@ -74,11 +75,13 @@ export function Navbar() {
                     </button>
                 </div>
             </div>
+            </nav>
 
-            {/* Mobile Menu Overlay - Right aligned slide-in */}
+            {/* Mobile Menu Overlay — nav dışında: backdrop-filter'lı nav içeren-blok
+                oluşturduğu için panel viewport'a tam yükseklikte sabitlensin. */}
             <div
                 className={cn(
-                    "fixed inset-y-0 right-0 z-40 w-full max-w-[300px] flex flex-col bg-background/95 backdrop-blur-xl border-l border-white/5 transition-all duration-300 ease-in-out md:hidden",
+                    "fixed inset-y-0 right-0 z-40 flex w-full max-w-[300px] flex-col border-l border-white/10 bg-[#0b0b0c] shadow-2xl shadow-black/50 transition-transform duration-300 ease-in-out md:hidden",
                     isOpen ? "translate-x-0" : "translate-x-full"
                 )}
             >
@@ -103,11 +106,11 @@ export function Navbar() {
 
             {/* Backdrop for closing when clicking outside */}
             {isOpen && (
-                <div 
-                    className="fixed inset-0 z-30 bg-black/20 md:hidden" 
+                <div
+                    className="fixed inset-0 z-30 bg-[rgba(0,0,0,0.55)] md:hidden"
                     onClick={() => setIsOpen(false)}
                 />
             )}
-        </nav>
+        </>
     );
 }
