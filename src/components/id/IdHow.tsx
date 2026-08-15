@@ -53,7 +53,7 @@ export function IdHow() {
     }, [steps.length]);
 
     return (
-        <section id="how" className="scroll-mt-24 border-t border-white/5 py-24 md:py-32">
+        <section id="how" className="scroll-mt-24 border-t border-border py-24 md:py-32">
             <div className="container mx-auto px-6 md:px-12">
                 <Reveal>
                     <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
@@ -65,7 +65,7 @@ export function IdHow() {
                 <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
                     {/* Sticky akış widget'ı */}
                     <div className="lg:sticky lg:top-24 lg:flex lg:h-[calc(100vh-8rem)] lg:items-center">
-                        <div className="mx-auto w-full max-w-sm rounded-2xl border border-white/5 bg-white/[0.02] p-6 md:p-8">
+                        <div className="mx-auto w-full max-w-sm rounded-2xl border border-border bg-surface p-6 md:p-8">
                             <IdFlowWidget step={step} />
                         </div>
                     </div>
@@ -86,7 +86,7 @@ export function IdHow() {
                                         "rounded-2xl border p-8 transition-all duration-500",
                                         step === i
                                             ? "border-accent/40 bg-accent/[0.04]"
-                                            : "border-white/5 bg-white/[0.02] lg:opacity-50"
+                                            : "border-border bg-surface lg:opacity-50"
                                     )}
                                 >
                                     <span

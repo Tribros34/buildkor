@@ -6,7 +6,7 @@ export function Philosophy() {
     const { t } = useLanguage();
 
     return (
-        <section className="py-24 md:py-32 bg-white/[0.02] border-y border-white/5">
+        <section className="py-24 md:py-32 bg-surface border-y border-border">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 mb-24">
                     <div>
@@ -15,7 +15,7 @@ export function Philosophy() {
                         </h2>
                         <div className="mt-6 h-px w-[100px] bg-accent" />
 
-                        <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-white/5 aspect-video w-full max-w-md">
+                        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-surface-2 aspect-video w-full max-w-md">
                             <video
                                 autoPlay
                                 loop

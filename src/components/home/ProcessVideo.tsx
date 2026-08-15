@@ -9,7 +9,7 @@ export function ProcessVideo() {
         <section className="py-24 md:py-32">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="mx-auto max-w-4xl">
-                    <div className="card-premium group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12 transition-all duration-300 hover:border-accent hover:bg-white/[0.04] hover:shadow-2xl hover:shadow-accent/10">
+                    <div className="card-premium group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-surface p-8 md:p-12 transition-all duration-300 hover:border-accent hover:bg-surface-2 hover:shadow-2xl hover:shadow-accent/10">
                         <div className="mb-8 text-center">
                             <h3 className="font-heading text-2xl font-medium text-foreground md:text-3xl mb-4">
                                 {t.philosophy.process.title}
@@ -19,7 +19,7 @@ export function ProcessVideo() {
                             </p>
                         </div>
 
-                        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/5 group-hover:scale-[1.02] transition-transform duration-500">
+                        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-border group-hover:scale-[1.02] transition-transform duration-500">
                             <video
                                 src="/videos/Meshy_AI_video-5.mp4"
                                 autoPlay

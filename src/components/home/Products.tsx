@@ -68,7 +68,7 @@ export function Products() {
                         return (
                             <Link href={data.href} key={index} className="block outline-none">
                                 <div
-                                    className="card-premium group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-white/[0.04] hover:shadow-2xl hover:shadow-accent/10"
+                                    className="card-premium group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-surface p-8 md:p-12 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-surface-2 hover:shadow-2xl hover:shadow-accent/10"
                                 >
                                     <div className="mb-8">
                                         <div className="mb-6 flex items-center justify-between">
@@ -83,7 +83,7 @@ export function Products() {
                                     </div>
 
                                     {/* visual placeholder/media */}
-                                    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/5 group-hover:scale-105 transition-transform duration-500">
+                                    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] border border-border group-hover:scale-105 transition-transform duration-500">
                                         {data?.video ? (
                                             <video
                                                 src={data.video}
@@ -95,7 +95,7 @@ export function Products() {
                                                 className="absolute inset-0 h-full w-full object-cover"
                                             />
                                         ) : (
-                                            <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-white/20">
+                                            <div className="absolute inset-0 flex items-center justify-center text-sm font-medium text-muted">
                                                 {t.products.interface_placeholder}
                                             </div>
                                         )}

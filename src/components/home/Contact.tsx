@@ -20,7 +20,7 @@ export function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 md:py-32 border-t border-white/5 bg-white/[0.02]">
+        <section id="contact" className="py-24 md:py-32 border-t border-border bg-surface">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
                     <div>
@@ -38,7 +38,7 @@ export function Contact() {
                         </div>
                     </div>
 
-                    <div className="relative rounded-2xl border border-white/5 bg-background p-8 lg:p-12">
+                    <div className="relative rounded-2xl border border-border bg-background p-8 lg:p-12">
                         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                             <div className="grid gap-6 md:grid-cols-2">
                                 <div className="flex flex-col gap-2">
@@ -48,7 +48,7 @@ export function Contact() {
                                         id="name"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-white/20 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                                        className="rounded-md border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-white/20 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                                         placeholder={t.contact.name_placeholder}
                                         required
                                     />
@@ -60,7 +60,7 @@ export function Contact() {
                                         id="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-white/20 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                                        className="rounded-md border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-white/20 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                                         placeholder={t.contact.email_placeholder}
                                         required
                                     />
@@ -74,7 +74,7 @@ export function Contact() {
                                     rows={4}
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
-                                    className="resize-none rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-foreground placeholder:text-white/20 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                                    className="resize-none rounded-md border border-border bg-surface-2 px-4 py-3 text-sm text-foreground placeholder:text-white/20 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                                     placeholder={t.contact.message_placeholder}
                                     required
                                 />

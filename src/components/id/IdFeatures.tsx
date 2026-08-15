@@ -28,7 +28,7 @@ export function IdFeatures() {
     const data = t.id.features;
 
     return (
-        <section className="border-t border-white/5 py-24 md:py-32">
+        <section className="border-t border-border py-24 md:py-32">
             <div className="container mx-auto px-6 md:px-12">
                 <Reveal>
                     <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
@@ -42,7 +42,7 @@ export function IdFeatures() {
                         const Icon = ICONS[i] ?? CreditCard;
                         return (
                             <Reveal key={i} delay={i * 60}>
-                                <div className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-colors hover:border-white/10 hover:bg-white/[0.04]">
+                                <div className="flex items-center gap-4 rounded-xl border border-border bg-surface p-5 transition-colors hover:border-border hover:bg-surface-2">
                                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-accent/20 bg-accent/10 text-accent">
                                         <Icon className="h-5 w-5" />
                                     </span>

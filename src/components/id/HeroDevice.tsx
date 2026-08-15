@@ -61,13 +61,13 @@ export function HeroDevice() {
                                 <div className="h-8 w-8 rounded-full bg-accent/30" />
                             </div>
                             <div className="h-3 w-24 rounded-full bg-white/20" />
-                            <div className="h-2 w-16 rounded-full bg-white/10" />
+                            <div className="h-2 w-16 rounded-full bg-surface-2" />
                         </div>
 
                         {/* Form alanları */}
                         <div className="mt-6 space-y-2.5">
-                            <div className="h-8 rounded-lg border border-white/10 bg-white/[0.03]" />
-                            <div className="h-8 rounded-lg border border-white/10 bg-white/[0.03]" />
+                            <div className="h-8 rounded-lg border border-border bg-surface" />
+                            <div className="h-8 rounded-lg border border-border bg-surface" />
                         </div>
 
                         {/* Talep butonu */}

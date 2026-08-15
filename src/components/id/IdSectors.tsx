@@ -13,7 +13,7 @@ const ICONS = [Home, PawPrint, Building2, Sparkles, Car];
 // `active` tüm sektörlerde ortak → hepsi aynı anda senkron ilerler.
 function SectorFlow({ steps, active }: { steps: string[]; active: number }) {
     return (
-        <div className="mt-6 border-t border-white/5 pt-6">
+        <div className="mt-6 border-t border-border pt-6">
             {steps.map((s, i) => {
                 const isLast = i === steps.length - 1;
                 const done = i < active;
@@ -25,7 +25,7 @@ function SectorFlow({ steps, active }: { steps: string[]; active: number }) {
                             <span
                                 className={cn(
                                     "absolute left-[11px] top-6 h-full w-px transition-colors duration-500",
-                                    done ? "bg-accent/50" : "bg-white/10"
+                                    done ? "bg-accent/50" : "bg-surface-2"
                                 )}
                             />
                         )}
@@ -36,7 +36,7 @@ function SectorFlow({ steps, active }: { steps: string[]; active: number }) {
                                     ? "scale-110 border-accent bg-accent text-white shadow-lg shadow-accent/20 ring-2 ring-accent/25"
                                     : on
                                         ? "border-accent/40 bg-accent/15 text-accent"
-                                        : "border-white/10 bg-white/[0.03] text-muted"
+                                        : "border-border bg-surface text-muted"
                             )}
                         >
                             {i + 1}
@@ -79,7 +79,7 @@ export function IdSectors() {
     }, [stepCount]);
 
     return (
-        <section className="border-t border-white/5 py-24 md:py-32">
+        <section className="border-t border-border py-24 md:py-32">
             <div className="container mx-auto px-6 md:px-12">
                 <Reveal>
                     <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
@@ -98,7 +98,7 @@ export function IdSectors() {
                             const demo = DEMO_URLS[i];
                             return (
                                 <Reveal key={i} delay={i * 70}>
-                                    <div className="group flex h-full flex-col rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-white/[0.04]">
+                                    <div className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface-2">
                                         <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg border border-accent/20 bg-accent/10">
                                             <Icon className="h-6 w-6 text-accent" />
                                         </div>
@@ -123,7 +123,7 @@ export function IdSectors() {
                                                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                                 </a>
                                             ) : (
-                                                <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium text-muted">
+                                                <span className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted">
                                                     {data.demo_soon}
                                                 </span>
                                             )}

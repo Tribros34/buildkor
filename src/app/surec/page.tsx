@@ -13,7 +13,7 @@ export default function ProcessPage() {
     return (
         <main className="min-h-screen bg-background pt-24 pb-32">
             {/* Header */}
-            <section className="relative overflow-hidden border-b border-white/5 bg-white/[0.01] py-24">
+            <section className="relative overflow-hidden border-b border-border bg-surface py-24">
                 <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
                 <div className="container relative z-10 mx-auto px-6 md:px-12">
                     <Link
@@ -37,7 +37,7 @@ export default function ProcessPage() {
             <section className="container mx-auto px-6 md:px-12 mt-24">
                 <div className="relative">
                     {/* Vertical line */}
-                    <div className="absolute left-[27px] top-0 bottom-0 w-px bg-white/5 md:left-1/2 md:-translate-x-px hidden md:block" />
+                    <div className="absolute left-[27px] top-0 bottom-0 w-px bg-surface-2 md:left-1/2 md:-translate-x-px hidden md:block" />
 
                     <div className="space-y-8">
                         {data.steps.map((step: any, index: number) => {
@@ -61,7 +61,7 @@ export default function ProcessPage() {
                                             className={`flex h-14 w-14 items-center justify-center rounded-full border text-sm font-bold font-heading transition-all duration-300 ${
                                                 isActive
                                                     ? "border-accent bg-accent text-white scale-110"
-                                                    : "border-white/10 bg-white/[0.03] text-muted hover:border-accent/50 hover:text-foreground hover:scale-105"
+                                                    : "border-border bg-surface text-muted hover:border-accent/50 hover:text-foreground hover:scale-105"
                                             }`}
                                         >
                                             {stepNum}
@@ -86,7 +86,7 @@ export default function ProcessPage() {
                                                 className={`rounded-2xl border p-8 transition-all duration-300 ${
                                                     isActive
                                                         ? "border-accent/40 bg-accent/5"
-                                                        : "border-white/5 bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.03]"
+                                                        : "border-border bg-surface hover:border-border hover:bg-surface"
                                                 }`}
                                             >
                                                 {/* Phase badge */}
@@ -112,7 +112,7 @@ export default function ProcessPage() {
                                                             : "max-h-0 opacity-0"
                                                     }`}
                                                 >
-                                                    <div className="border-t border-white/5 pt-6">
+                                                    <div className="border-t border-border pt-6">
                                                         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-accent">
                                                             {data.deliverables_title}
                                                         </p>
@@ -152,7 +152,7 @@ export default function ProcessPage() {
                     {data.principles.map((p: any, i: number) => (
                         <div
                             key={i}
-                            className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-all hover:border-white/10 hover:bg-white/[0.04]"
+                            className="rounded-2xl border border-border bg-surface p-8 transition-all hover:border-border hover:bg-surface-2"
                         >
                             <div className="mb-4 font-heading text-4xl font-bold text-white/5">
                                 0{i + 1}
@@ -168,7 +168,7 @@ export default function ProcessPage() {
 
             {/* CTA */}
             <section className="container mx-auto px-6 md:px-12 mt-32">
-                <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-12 md:p-16 text-center">
+                <div className="rounded-2xl border border-border bg-surface p-12 md:p-16 text-center">
                     <h2 className="font-heading text-3xl font-semibold text-foreground md:text-4xl">
                         {data.cta_title}
                     </h2>

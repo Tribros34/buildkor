@@ -57,7 +57,7 @@ export function Hero() {
                     </Link>
                     <Link
                         href="#contact"
-                        className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] px-8 text-sm font-medium text-foreground transition-all hover:bg-white/[0.05] hover:scale-105"
+                        className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-surface px-8 text-sm font-medium text-foreground transition-all hover:bg-white/[0.05] hover:scale-105"
                     >
                         {t.hero.cta_contact}
                     </Link>

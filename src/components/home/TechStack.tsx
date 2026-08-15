@@ -20,7 +20,7 @@ export function TechStack() {
     const { t } = useLanguage();
 
     return (
-        <section className="border-t border-white/5 bg-background py-16">
+        <section className="border-t border-border bg-background py-16">
             <div className="container mx-auto px-6 md:px-12">
                 <p className="mb-8 text-center text-sm font-medium uppercase tracking-widest text-muted">
                     {t.techStack.title}

@@ -142,11 +142,12 @@ export function IdHero() {
         <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808010_1px,transparent_1px),linear-gradient(to_bottom,#80808010_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_45%,#000_60%,transparent_100%)]" />
     );
 
+    // Hero her iki temada da koyu (video üstünde) — CTA'lar açık-koyu üstünde sabit.
     const Ctas = (
         <div className="flex flex-col items-center gap-4 sm:flex-row">
             <Link
                 href="#how"
-                className="group inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-all hover:scale-105 hover:bg-foreground/90"
+                className="group inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-[#0b0b0c] transition-all hover:scale-105 hover:bg-white/90"
             >
                 {data.cta_how}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -155,7 +156,7 @@ export function IdHero() {
                 href={waHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] px-8 text-sm font-medium text-foreground transition-all hover:scale-105 hover:bg-white/[0.05]"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 text-sm font-medium text-white transition-all hover:scale-105 hover:bg-white/10"
             >
                 {data.cta_contact}
             </a>
@@ -165,7 +166,7 @@ export function IdHero() {
     // ----- Simple / static fallback (mobile + reduced-motion + pre-hydration) -----
     if (simple) {
         return (
-            <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden bg-background px-6 pb-16 pt-24 text-center">
+            <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden bg-[#0b0b0c] px-6 pb-16 pt-24 text-center">
                 {GridBg}
                 {/* video plays a short muted loop on mobile; static frame under reduced-motion */}
                 <div className="pointer-events-none absolute inset-0 z-0">
@@ -180,7 +181,7 @@ export function IdHero() {
                         className="h-full w-full object-cover"
                     />
                     {/* Kenar scrim'i — video solgun görünmesin diye düşük yoğunlukta */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0c]/40 via-transparent to-[#0b0b0c]" />
                     {/* İçeriğin arkasına odaklı vignette — videodaki bozuk yazılar okunurluğu bozmasın */}
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_50%_55%,rgba(11,11,12,0.88),rgba(11,11,12,0.35)_60%,transparent_80%)]" />
                 </div>
@@ -189,10 +190,10 @@ export function IdHero() {
                     <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium tracking-wide text-accent">
                         {data.badge}
                     </span>
-                    <h1 className="animate-fade-in font-heading text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
+                    <h1 className="animate-fade-in font-heading text-5xl font-bold tracking-tight text-white sm:text-6xl">
                         {data.title}
                     </h1>
-                    <p className="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+                    <p className="max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg">
                         {data.subtitle}
                     </p>
                     <div className="mt-8">
@@ -206,7 +207,7 @@ export function IdHero() {
 
     // ----- Desktop scroll-scrub (pinned) -----
     return (
-        <section ref={wrapperRef} className="relative h-[300vh] bg-background">
+        <section ref={wrapperRef} className="relative h-[300vh] bg-[#0b0b0c]">
             <div
                 ref={stageRef}
                 className="sticky top-0 flex h-screen items-center justify-center overflow-hidden"
@@ -233,7 +234,7 @@ export function IdHero() {
                         className="h-full w-full object-cover"
                     />
                     {/* Kenar scrim'i — üst/alt; orta (temas anı) net kalsın */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/10 to-background/80" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0c]/50 via-[#0b0b0c]/10 to-[#0b0b0c]/80" />
                     {/* Merkez vignette — başlık/altbaşlık/bildirim videodaki bozuk yazılar üzerinde temiz okunsun */}
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_45%_at_50%_50%,rgba(11,11,12,0.72),transparent_72%)]" />
                 </div>
@@ -262,11 +263,11 @@ export function IdHero() {
                     <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium tracking-wide text-accent">
                         {data.badge}
                     </span>
-                    <h1 className="font-heading text-6xl font-bold tracking-tight text-foreground md:text-8xl">
+                    <h1 className="font-heading text-6xl font-bold tracking-tight text-white md:text-8xl">
                         {data.title}
                     </h1>
                     <span
-                        className="mt-4 text-xs uppercase tracking-[0.3em] text-muted"
+                        className="mt-4 text-xs uppercase tracking-[0.3em] text-zinc-400"
                         style={{ opacity: "var(--hint-o)" as unknown as number }}
                     >
                         {data.scroll_hint}
@@ -278,14 +279,14 @@ export function IdHero() {
                     className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center px-6"
                     style={{ opacity: "var(--sub-o)" as unknown as number }}
                 >
-                    <p className="max-w-2xl text-center font-heading text-2xl font-medium leading-snug text-foreground md:text-4xl">
+                    <p className="max-w-2xl text-center font-heading text-2xl font-medium leading-snug text-white md:text-4xl">
                         {data.subtitle}
                     </p>
                 </div>
 
                 {/* Result background — dağınık video, temiz sahneye "bağlanır" */}
                 <div
-                    className="pointer-events-none absolute inset-0 z-[15] bg-gradient-to-b from-background via-background/95 to-background"
+                    className="pointer-events-none absolute inset-0 z-[15] bg-gradient-to-b from-[#0b0b0c] via-[#0b0b0c]/95 to-[#0b0b0c]"
                     style={{ opacity: "var(--result-o)" as unknown as number }}
                 />
 

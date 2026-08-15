@@ -11,7 +11,7 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-background pt-24 pb-32">
             {/* Header */}
-            <section className="relative overflow-hidden border-b border-white/5 bg-white/[0.01] py-24">
+            <section className="relative overflow-hidden border-b border-border bg-surface py-24">
                 <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
                 <div className="container relative z-10 mx-auto px-6 md:px-12">
                     <Link
@@ -70,7 +70,7 @@ export default function AboutPage() {
 
             {data.team && data.team.length > 0 && (
                 <section className="container mx-auto px-6 md:px-12 mt-32">
-                    <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12">
+                    <div className="rounded-2xl border border-border bg-surface p-8 md:p-12">
                         <div className="mb-12 max-w-2xl">
                             <h2 className="font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
                                 {data.founder_title}
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
                         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                             {data.team.map((member: any, index: number) => (
-                                <div key={index} className="group relative overflow-hidden rounded-xl border border-white/5 bg-white/[0.01] p-6 transition-colors hover:bg-white/[0.03]">
+                                <div key={index} className="group relative overflow-hidden rounded-xl border border-border bg-surface p-6 transition-colors hover:bg-surface">
                                     <div className="mb-4 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                                         {member.role}
                                     </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
             {/* CTA */}
             <section className="container mx-auto px-6 md:px-12 mt-32">
-                <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-12 md:p-16 text-center">
+                <div className="rounded-2xl border border-border bg-surface p-12 md:p-16 text-center">
                     <h2 className="font-heading text-3xl font-semibold text-foreground md:text-4xl">
                         {data.cta_title}
                     </h2>

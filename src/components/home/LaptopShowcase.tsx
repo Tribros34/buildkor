@@ -138,7 +138,7 @@ export function LaptopShowcase() {
     return (
         <section
             ref={sectionRef}
-            className="relative overflow-hidden bg-[#0B0B0C] py-24 md:py-32"
+            className="relative overflow-hidden bg-background py-24 md:py-32"
         >
             {/* Subtle Texture/Grid */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -167,7 +167,7 @@ export function LaptopShowcase() {
                                 {t.laptopShowcase.cta_explore}
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </button>
-                            <button className="btn-premium flex h-12 items-center justify-center rounded-full border border-white/10 bg-transparent px-8 text-sm font-medium text-foreground hover:bg-white/5 transition-all">
+                            <button className="btn-premium flex h-12 items-center justify-center rounded-full border border-border bg-transparent px-8 text-sm font-medium text-foreground hover:bg-surface-2 transition-all">
                                 {t.laptopShowcase.cta_how}
                             </button>
                         </div>
@@ -190,20 +190,20 @@ export function LaptopShowcase() {
                             <div className="relative mx-auto aspect-[16/10] w-[85%] rounded-[1.5rem] bg-[#1a1a1b] shadow-2xl ring-1 ring-white/10 sm:w-[90%] md:w-full">
 
                                 {/* Screen Bezel / Border */}
-                                <div className="absolute inset-[2px] rounded-[1.4rem] border border-white/5 bg-[#0a0a0a]">
+                                <div className="absolute inset-[2px] rounded-[1.4rem] border border-border bg-[#0a0a0a]">
 
                                     {/* Inner Screen Content (Mock UI) */}
                                     <div className="absolute inset-[6px] overflow-hidden rounded-[1rem] bg-[#0F0F10] flex flex-col">
 
                                         {/* Top Bar */}
-                                        <div className="flex h-10 items-center justify-between border-b border-white/5 bg-white/[0.02] px-4">
+                                        <div className="flex h-10 items-center justify-between border-b border-border bg-surface px-4">
                                             <div className="flex items-center gap-2">
                                                 <div className="h-2 w-2 rounded-full bg-accent/80"></div>
                                                 <span className="text-[10px] font-medium tracking-wide text-muted/80 uppercase">{t.laptopShowcase.nexus_dashboard}</span>
                                             </div>
                                             <div className="flex gap-3">
-                                                <div className="h-1.5 w-12 rounded-full bg-white/10"></div>
-                                                <div className="h-1.5 w-8 rounded-full bg-white/10"></div>
+                                                <div className="h-1.5 w-12 rounded-full bg-surface-2"></div>
+                                                <div className="h-1.5 w-8 rounded-full bg-surface-2"></div>
                                             </div>
                                         </div>
 
@@ -212,25 +212,25 @@ export function LaptopShowcase() {
 
                                             {/* Left Sidebar/List */}
                                             <div className="col-span-1 space-y-3">
-                                                <div className="h-8 w-full rounded-md bg-white/5 animate-pulse delay-[0ms] opacity-50"></div>
-                                                <div className="h-24 w-full rounded-md border border-white/5 bg-white/[0.02]"></div>
-                                                <div className="h-24 w-full rounded-md border border-white/5 bg-white/[0.02]"></div>
+                                                <div className="h-8 w-full rounded-md bg-surface-2 animate-pulse delay-[0ms] opacity-50"></div>
+                                                <div className="h-24 w-full rounded-md border border-border bg-surface"></div>
+                                                <div className="h-24 w-full rounded-md border border-border bg-surface"></div>
                                             </div>
 
                                             {/* Main Chart Area */}
                                             <div className="col-span-2 flex flex-col gap-4">
                                                 <div className="flex items-center justify-between">
-                                                    <div className="h-6 w-32 rounded-md bg-white/5"></div>
+                                                    <div className="h-6 w-32 rounded-md bg-surface-2"></div>
                                                     <span className="rounded-full border border-accent/20 bg-accent/5 px-2 py-0.5 text-[9px] font-medium text-accent">{t.laptopShowcase.status_beta}</span>
                                                 </div>
 
 
                                                 {/* Mock Chart Bars */}
-                                                <div className="flex-1 rounded-lg border border-white/5 bg-white/[0.02] p-4 flex items-end justify-between gap-2">
+                                                <div className="flex-1 rounded-lg border border-border bg-surface p-4 flex items-end justify-between gap-2">
                                                     {[40, 70, 50, 90, 60, 80, 45].map((h, i) => (
                                                         <div
                                                             key={i}
-                                                            className="w-full rounded-t-sm bg-white/10 hover:bg-white/20 transition-colors duration-300"
+                                                            className="w-full rounded-t-sm bg-surface-2 hover:bg-white/20 transition-colors duration-300"
                                                             style={{ height: `${h}%` }}
                                                         ></div>
                                                     ))}

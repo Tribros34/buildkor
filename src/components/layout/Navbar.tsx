@@ -4,10 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
-import { Menu, X } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 export function Navbar() {
     const { t, language, toggleLanguage } = useLanguage();
+    const { theme, toggleTheme } = useTheme();
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
@@ -20,13 +22,13 @@ export function Navbar() {
 
     return (
         <>
-        <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md transition-all">
+        <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md transition-all">
             <div className="container mx-auto flex h-16 items-center justify-between px-6 md:px-12">
                 <Link href="/" className="text-lg font-heading font-semibold tracking-tight transition-opacity hover:opacity-80">
                     <span className="text-red-500">&lt;</span>
-                    <span className="text-white">Build</span>
-                    <span className="text-white">K</span>
-                    <span className="text-white">or</span>
+                    <span className="text-foreground">Build</span>
+                    <span className="text-foreground">K</span>
+                    <span className="text-foreground">or</span>
                     <span className="text-red-500">/&gt;</span>
                 </Link>
 
@@ -34,7 +36,7 @@ export function Navbar() {
                     {/* Language toggle - Always visible */}
                     <button
                         onClick={toggleLanguage}
-                        className="flex h-8 w-14 items-center rounded-full bg-white/5 px-1 transition-colors hover:bg-white/10"
+                        className="flex h-8 w-14 items-center rounded-full bg-surface-2 px-1 transition-colors hover:bg-surface-2"
                         aria-label="Toggle Language"
                     >
                         <div
@@ -45,6 +47,15 @@ export function Navbar() {
                         >
                             {language.toUpperCase()}
                         </div>
+                    </button>
+
+                    {/* Theme toggle */}
+                    <button
+                        onClick={toggleTheme}
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-2 text-muted transition-colors hover:bg-surface hover:text-foreground"
+                        aria-label="Toggle theme"
+                    >
+                        {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                     </button>
 
                     {/* Desktop Navigation */}
@@ -81,7 +92,7 @@ export function Navbar() {
                 oluşturduğu için panel viewport'a tam yükseklikte sabitlensin. */}
             <div
                 className={cn(
-                    "fixed inset-y-0 right-0 z-40 flex w-full max-w-[300px] flex-col border-l border-white/10 bg-[#0b0b0c] shadow-2xl shadow-black/50 transition-transform duration-300 ease-in-out md:hidden",
+                    "fixed inset-y-0 right-0 z-40 flex w-full max-w-[300px] flex-col border-l border-border bg-background shadow-2xl shadow-black/50 transition-transform duration-300 ease-in-out md:hidden",
                     isOpen ? "translate-x-0" : "translate-x-full"
                 )}
             >

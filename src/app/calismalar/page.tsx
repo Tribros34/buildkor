@@ -52,7 +52,7 @@ export default function WorksPage() {
     return (
         <main className="min-h-screen bg-background pt-24 pb-32">
             {/* Header */}
-            <section className="relative overflow-hidden border-b border-white/5 bg-white/[0.01] py-24">
+            <section className="relative overflow-hidden border-b border-border bg-surface py-24">
                 <div
                     className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
                 />
@@ -90,7 +90,7 @@ export default function WorksPage() {
 
             {/* CTA */}
             <section className="container mx-auto px-6 md:px-12 mt-32">
-                <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-12 md:p-16 text-center">
+                <div className="rounded-2xl border border-border bg-surface p-12 md:p-16 text-center">
                     <h2 className="font-heading text-3xl font-semibold text-foreground md:text-4xl">
                         {t.works_page.cta_title}
                     </h2>
@@ -116,7 +116,7 @@ function WorkCard({ work, large = false, t }: { work: WorkItem; large?: boolean;
 
     const CardContent = (
         <div
-            className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-white/[0.04] hover:shadow-2xl hover:shadow-accent/10 ${
+            className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-surface p-8 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-surface-2 hover:shadow-2xl hover:shadow-accent/10 ${
                 large ? "md:p-12" : "md:p-10"
             }`}
         >
@@ -141,7 +141,7 @@ function WorkCard({ work, large = false, t }: { work: WorkItem; large?: boolean;
                 <p className="mb-8 text-base leading-relaxed text-muted">{itemData.desc}</p>
             </div>
             <div className="mt-auto">
-                <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl border border-white/5 bg-gradient-to-br from-white/5 to-white/[0.02] transition-transform duration-500 group-hover:scale-[1.02]">
+                <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl border border-border bg-gradient-to-br from-white/5 to-white/[0.02] transition-transform duration-500 group-hover:scale-[1.02]">
                     {work.video ? (
                         <video
                             src={work.video}
@@ -162,7 +162,7 @@ function WorkCard({ work, large = false, t }: { work: WorkItem; large?: boolean;
                     {work.tags.map((tag) => (
                         <span
                             key={tag}
-                            className="rounded-md bg-white/5 px-3 py-1 text-xs text-muted border border-white/5"
+                            className="rounded-md bg-surface-2 px-3 py-1 text-xs text-muted border border-border"
                         >
                             {tag}
                         </span>

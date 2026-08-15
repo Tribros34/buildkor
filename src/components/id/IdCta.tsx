@@ -14,10 +14,10 @@ export function IdCta() {
     const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.whatsapp.message)}`;
 
     return (
-        <section className="border-t border-white/5 py-24 md:py-32">
+        <section className="border-t border-border py-24 md:py-32">
             <div className="container mx-auto px-6 md:px-12">
                 <Reveal>
-                    <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-12 text-center md:p-16">
+                    <div className="rounded-2xl border border-border bg-surface p-12 text-center md:p-16">
                         <h2 className="mx-auto max-w-2xl font-heading text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
                             {data.title}
                         </h2>
@@ -36,7 +36,7 @@ export function IdCta() {
                             </a>
                             <a
                                 href={`tel:${PHONE}`}
-                                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-8 text-sm font-medium text-foreground transition-all hover:scale-105 hover:bg-white/[0.05]"
+                                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-border bg-surface px-8 text-sm font-medium text-foreground transition-all hover:scale-105 hover:bg-surface-2"
                             >
                                 <Phone className="h-4 w-4" />
                                 {PHONE}

@@ -1,12 +1,31 @@
 @import "tailwindcss";
 
+/* Light theme (default) */
 :root {
-  /* Minimal Dark Theme Palette */
-  --background: #0B0B0C;
-  --foreground: #F5F5F5;
-  --muted: #A1A1AA;
-  --border: #27272A;
-  --accent: #C33A2C;
+  --background: #ffffff;
+  --foreground: #0b0b0c;
+  --muted: #57575e;
+  --border: #e5e5e8;
+  --accent: #c33a2c;
+  --surface: #fafafa;
+  --surface-2: #f1f1f3;
+  /* "panel" = device screens / intentionally-dark surfaces; dark in both themes */
+  --panel: #0b0b0c;
+  --panel-2: #17171a;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0b0b0c;
+  --foreground: #f5f5f5;
+  --muted: #a1a1aa;
+  --border: #27272a;
+  --accent: #c33a2c;
+  --surface: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.045);
+  --panel: #101012;
+  --panel-2: #17171a;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -15,6 +34,10 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;

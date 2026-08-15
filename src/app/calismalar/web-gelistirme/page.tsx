@@ -37,7 +37,7 @@ export default function WebDevelopmentPage() {
     return (
         <main className="min-h-screen bg-background pt-24 pb-32">
             {/* Header */}
-            <section className="relative overflow-hidden border-b border-white/5 bg-white/[0.01] py-24">
+            <section className="relative overflow-hidden border-b border-border bg-surface py-24">
                 <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
                 <div className="container relative z-10 mx-auto px-6 md:px-12">
                     <Link
@@ -62,7 +62,7 @@ export default function WebDevelopmentPage() {
             <section className="container mx-auto px-6 md:px-12 mt-24">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                     {EXPERTISE.map((item, index) => (
-                        <div key={index} className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:bg-white/[0.04] transition-colors">
+                        <div key={index} className="rounded-2xl border border-border bg-surface p-8 hover:bg-surface-2 transition-colors">
                             <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 border border-accent/20">
                                 {item.icon}
                             </div>
@@ -103,7 +103,7 @@ export default function WebDevelopmentPage() {
                                 {TECHNOLOGIES.map((tech) => (
                                     <span
                                         key={tech}
-                                        className="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-muted"
+                                        className="rounded-md border border-border bg-surface-2 px-3 py-1 text-sm text-muted"
                                     >
                                         {tech}
                                     </span>
@@ -113,7 +113,7 @@ export default function WebDevelopmentPage() {
                     </div>
 
                     <div className="lg:col-span-8">
-                        <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-2 overflow-hidden shadow-2xl">
+                        <div className="rounded-2xl border border-border bg-surface p-2 overflow-hidden shadow-2xl">
                             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
                                 <video 
                                     src="/videos/meshy_ai_video.mp4" 
@@ -167,7 +167,7 @@ export default function WebDevelopmentPage() {
                     </div>
 
                     <div className="lg:col-span-8 space-y-12">
-                        <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-2 overflow-hidden shadow-2xl">
+                        <div className="rounded-2xl border border-border bg-surface p-2 overflow-hidden shadow-2xl">
                             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-black">
                                 <Image 
                                     src="/works/boyabadana/homepage.png" 
@@ -179,7 +179,7 @@ export default function WebDevelopmentPage() {
                             <p className="text-center text-sm text-muted mt-4 mb-2 font-mono">{data.img1_cap}</p>
                         </div>
 
-                        <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-2 overflow-hidden shadow-2xl">
+                        <div className="rounded-2xl border border-border bg-surface p-2 overflow-hidden shadow-2xl">
                             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-black">
                                 <Image 
                                     src="/works/boyabadana/services.png" 
@@ -196,7 +196,7 @@ export default function WebDevelopmentPage() {
 
             {/* CTA */}
             <section className="container mx-auto px-6 md:px-12 mt-32">
-                <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-12 md:p-16 text-center">
+                <div className="rounded-2xl border border-border bg-surface p-12 md:p-16 text-center">
                     <h2 className="font-heading text-3xl font-semibold text-foreground md:text-4xl">
                         {data.cta_title}
                     </h2>
